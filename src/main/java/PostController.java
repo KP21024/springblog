@@ -1,34 +1,51 @@
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
 
 @Controller
 public class PostController {
-    @RequestMapping("/posts")
 
-    @GetMapping
-    @ResponseBody
-    public String postsIndex() {
-        return "Post Index page";
+//    method	url	description
+//    GET	/posts	posts index page
+
+    @GetMapping("/posts")
+    public String getPosts(Model vModel) {
+        List<Post> posts = new ArrayList<>(Arrays.asList(
+                new Post(1, )
+        ))
+        return "Viewing all posts...";
     }
 
-    @GetMapping("/{id}")
+//    GET	/posts/{id}	view an individual post
+
+    @GetMapping("/posts/{id}")
     @ResponseBody
-    public String postView(long id) {
-        return "View individual post";
+    public String getPost(@PathVariable long id) {
+        return "Viewing post: " + id;
     }
 
-    @GetMapping("/create")
+//    GET	/posts/create	view the form for creating a post
+
+    @GetMapping("/posts/create")
     @ResponseBody
-    public String createAPost() {
-        return "View for form to create a post";
+    public String getCreatePostForm() {
+        return "Form to create post...";
     }
 
-    @PostMapping("/create")
+    //    POST	/posts/create	create a new post
+    @PostMapping("/posts/create")
     @ResponseBody
-    public String ccreateANewPost() {
-        return "View for creating a new post";
+    public String savePost() {
+        return "Saving post...";
     }
+
+
 }
+
+
