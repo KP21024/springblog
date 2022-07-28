@@ -1,3 +1,5 @@
+package com.example.codeup.springblog;
+
 public class Post {
     private String title;
     private String body;

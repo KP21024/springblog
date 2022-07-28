@@ -1,3 +1,4 @@
+package com.example.codeup.springblog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,13 +14,13 @@ public class ProductController {
     @GetMapping("/products")
     public String showAllProducts(Model vModel) {
 
-        List<Product>  productList = new ArrayList<>(Arrays.asList(
-                new Product("Hammer", 10000),
-                new Product("Broom", 2000),
-                new Product("Broom", 50)
-        ));
+//        List<Product>  productList = new ArrayList<>(Arrays.asList(
+//                new Product("Hammer", 10000),
+//                new Product("Broom", 2000),
+//                new Product("Broom", 50)
+//        ));
 
-        vModel.addAttribute("products", productList);
+//        vModel.addAttribute("products", productList);
         return "products/index";
     }
 }

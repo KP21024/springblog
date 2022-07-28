@@ -1,3 +1,5 @@
+package com.example.codeup.springblog;
+
 import javax.persistence.*;
 
 
@@ -49,8 +51,5 @@ public class Product {
         this.priceInCents = priceInCents;
     }
 
-    public Product(String name, int priceInCents) {
-        this.name = name;
-        this.priceInCents = priceInCents;
-    }
+
 }
