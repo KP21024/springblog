@@ -1,6 +1,30 @@
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "products")
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "INT")
+    private long id;
+
+    @Column(length = 100, nullable = false)
     private String name;
+
+    @Column
     private int priceInCents;
+
+    public Product() {
+
+    }
+
+    public Product(long id, String name, int priceInCents) {
+        this.id = id;
+        this.name = name;
+        this.priceInCents = priceInCents;
+    }
 
     public String getName() {
         return name;
@@ -9,11 +33,17 @@ public class Product {
         this.name = name;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public int getPriceInCents() {
         return priceInCents;
     }
-
 
     public void setPriceInCents(int priceInCents) {
         this.priceInCents = priceInCents;

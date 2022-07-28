@@ -14,13 +14,13 @@ public class PostController {
 //    method	url	description
 //    GET	/posts	posts index page
 
-    @GetMapping("/posts")
-    public String getPosts(Model vModel) {
-        List<Post> posts = new ArrayList<>(Arrays.asList(
-                new Post(1, )
-        ))
-        return "Viewing all posts...";
-    }
+//    @GetMapping("/posts")
+//    public String getPosts(Model vModel) {
+//        List<Post> posts = new ArrayList<>(Arrays.asList(
+//                new Post(1, )
+//        ));
+//        return "Viewing all posts...";
+//    }
 
 //    GET	/posts/{id}	view an individual post
 
